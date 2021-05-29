@@ -1,5 +1,9 @@
 const express=require('express');
 // const path=require('path');
+
+//newly added line 5
+const multer = require('multer');
+
 const csrf=require('csurf');
 const session = require('express-session');
 
@@ -10,6 +14,9 @@ const app=express();
 
 app.set('view engine','ejs');
 app.set('views','views');
+
+//newly added line 19 .use multer before csrf
+app.use(multer({dest:'images/'}).array('image'));
 
 const csrfProtection=csrf();
 
