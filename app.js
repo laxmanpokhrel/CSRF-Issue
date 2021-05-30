@@ -16,7 +16,7 @@ app.set('view engine','ejs');
 app.set('views','views');
 
 //newly added line 19 .use multer before csrf
-app.use(multer({dest:'images/'}).array('image'));
+//app.use(multer({dest:'images/'}).array('image'));
 
 const csrfProtection=csrf();
 

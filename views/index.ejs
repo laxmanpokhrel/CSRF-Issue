@@ -7,10 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/upload" method='POST' enctype="multipart/form-data">
+    <!-- we passed _csrf token as parameter to /upload route as below -->
+    <form action="/upload/?_csrf=<%= csrfToken%>" method='POST' enctype="multipart/form-data">
         <label for="image"> Upload image</label>
         <input type="file" name='image' id='image' multiple>
-        <input type="hidden" name='_csrf' value="<%= csrfToken%>">
         <button type="submit">DONE</button>
     </form>
 </body>
