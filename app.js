@@ -10,6 +10,8 @@ const session = require('express-session');
 
 const adminRoutes=require('./routes/adminRoutes');
 
+const port=process.env.PORT || 5000;
+
 const app=express();
 
 app.set('view engine','ejs');
@@ -41,7 +43,7 @@ app.use((req, res, next) => {
 
 app.use(adminRoutes);
 
-app.listen(5000,()=>{
+app.listen(port,()=>{
     console.log('listening at port : 5000');
 })
 
