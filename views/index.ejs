@@ -10,7 +10,9 @@
     <!-- we passed _csrf token as parameter to /upload route as below -->
     <form action="/upload/?_csrf=<%= csrfToken%>" method='POST' enctype="multipart/form-data">
         <label for="image"> Upload image</label>
-        <input type="file" name='image' id='image' multiple>
+        <input type="file" name='image' id='image' accept="image/*">
+        <label for="screenshot"> Upload screenshot</label>
+        <input type="file" name='screenshot' id='screenshot' accept="image/*" multiple>
         <button type="submit">DONE</button>
     </form>
 </body>
